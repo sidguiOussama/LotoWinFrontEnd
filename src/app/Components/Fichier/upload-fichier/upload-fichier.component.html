@@ -1,0 +1,10 @@
+
+<div class="container col-md-6 mx-auto mt-5 ">
+  <h3>upload file</h3>
+  <div class="form-group">
+    <input type="file" class="form-control" (change)="onUpload($event)" #documentFile style="display: none;"/>
+    <button type="button" class="btn btn-primary border rounded" (click)="documentFile.click()">
+      Upload file <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

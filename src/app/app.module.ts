@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UploadFichierComponent } from './Components/Fichier/upload-fichier/upload-fichier.component';
+import {FichierService} from './Services/fichier.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UploadFichierComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    FichierService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
