@@ -1,0 +1,48 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link text-danger" style="cursor: pointer;" (click)="plus()"><h4>Numéro qui sort plus souvent</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" style="cursor: pointer;" (click)="moins()"><h4>Numéro qui sort moins souvent</h4></a>
+  </li>
+</ul>
+<br>
+<br>
+
+<div class="col-md-9 m-5">
+
+  <!--<form>
+    <div class="col-md-04">
+      <div class="form-group">
+        <label for="dateD">Au :</label> <input type="date" class="form-control" id="dateD">
+      </div>
+    </div>
+
+    <div class="col-md-04">
+      <div class="form-group">
+        <label for="dateD">Au :</label> <input type="date" class="form-control" id="dateD">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+  </form>
+    -->
+  <table class="table ">
+    <thead class="bg-primary ">
+    <tr>
+      <th scope="col">Numero</th>
+      <th scope="col">Nombre de sortie</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of map | keyvalue">
+      <th scope="row">{{item.key}}</th>
+      <td>{{item.value}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
