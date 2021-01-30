@@ -8,7 +8,7 @@ import {Fichier} from '../Models/Fichier.module';
 })
 export class FichierService{
 
-  url = 'http://localhost:8080/Fichier';
+  url = 'https://loto-win-api.herokuapp.com/Fichier';
   constructor(private  http: HttpClient) { }
 
   createNewFile(fichier: Fichier): Observable<Fichier>{
