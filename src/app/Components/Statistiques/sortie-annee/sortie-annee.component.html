@@ -1,1 +1,50 @@
-<p>sortie-annee works!</p>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " style="cursor: pointer;" (click)="plus()"><h4>Numéro qui sort plus souvent</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" style="cursor: pointer;" (click)="moins()"><h4>Numéro qui sort moins souvent</h4></a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-danger" style="cursor: pointer;" (click)="sortie()"><h4>Sortie sur une année</h4></a>
+  </li>
+</ul>
+<br>
+<br>
+
+
+
+<div class="container  mx-auto mt-5 ">
+
+  <div class="" style="margin-top:5%">
+
+    <div class="container">
+      <!-- Horizonatal Form -->
+      <div class="row">
+        <div class="col-xs-6">
+          <div>
+          </div>
+        </div>
+        <div class="col" style="margin-left: 4%">
+          <div>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [plugins]="barChartPlugins"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+

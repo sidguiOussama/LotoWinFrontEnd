@@ -1,10 +1,31 @@
 
 <div class="container col-md-6 mx-auto mt-5 ">
-  <h3>upload file</h3>
-  <div class="form-group">
-    <input type="file" class="form-control" (change)="onUpload($event)" #documentFile style="display: none;"/>
-    <button type="button" class="btn btn-primary border rounded" (click)="documentFile.click()">
-      Upload file <i class="fa fa-plus" aria-hidden="true"></i>
-    </button>
+
+
+  <div class="card text-center" style="margin-top:15%">
+
+    <div class="card-body">
+      <h1 class="card-title">Augmenter vos chance avec nous</h1>
+      <div class=" text-danger  text-center" >
+        <h3>télécharger l'historique des tirages via le site de FDJ</h3>
+        <h3>https://www.fdj.fr/jeux-de-tirage/loto/resultats</h3>
+      </div>
+
+      <div class="mt-md-5">
+        <div class="form-group">
+          <input type="file" class="form-control" (change)="onUpload($event)" #documentFile style="display: none;"/>
+          <button type="button" class="btn btn-primary border rounded btn-lg" (click)="documentFile.click()">
+            Ajouter Fichier <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="ml-2 btn btn-primary border rounded btn-lg" routerLink="/moins"> Données Existantes </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
   </div>
+
 </div>

@@ -10,6 +10,8 @@ import { PlusSouventComponent } from './Components/Statistiques/plus-souvent/plu
 import {StatistiqueService} from './Services/statistique.service';
 import { MoinsSouventComponent } from './Components/Statistiques/moins-souvent/moins-souvent.component';
 import { SortieAnneeComponent } from './Components/Statistiques/sortie-annee/sortie-annee.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {ChartsModule} from 'ng2-charts';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { SortieAnneeComponent } from './Components/Statistiques/sortie-annee/sor
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    ChartsModule,
   ],
   providers: [
     FichierService,

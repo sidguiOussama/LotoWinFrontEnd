@@ -5,44 +5,76 @@
   <li class="nav-item">
     <a class="nav-link" style="cursor: pointer;" (click)="moins()"><h4>Numéro qui sort moins souvent</h4></a>
   </li>
+
+  <li class="nav-item">
+    <a class="nav-link " style="cursor: pointer;" (click)="sortie()"><h4>Sortie sur une année</h4></a>
+  </li>
 </ul>
 <br>
 <br>
 
-<div class="col-md-9 m-5">
 
-  <!--<form>
-    <div class="col-md-04">
-      <div class="form-group">
-        <label for="dateD">Au :</label> <input type="date" class="form-control" id="dateD">
+
+
+<div class="container  mx-auto mt-5 ">
+
+  <div class="" style="margin-top:5%">
+
+    <div class="container">
+      <!-- Horizonatal Form -->
+      <div class="row">
+        <div class="col-xs-6">
+          <form class="form-horizontal form-group form-control-range " [formGroup]="plusSouventForm" (ngSubmit)="OnSubmit()">
+
+            <div class="form-group">
+              <label for="dateDebut" class="col-xs-2">Au</label>
+              <div class="col-xs-10">
+                <input type="date" class="form-control" formControlName="dateDebut" id="dateDebut" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="dateFin" class="col-xs-2">Jusqu'a</label>
+              <div class="col-xs-10">
+                <input type="date" class="form-control" formControlName="dateFin"id="dateFin" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label  class="pull-left">Nombre de numéro :</label>
+              <select formControlName="number" class="form-control"   name="number">
+                <option *ngFor="let number of numbers" [ngValue]="number" style="color: #0a0c0d">
+                  {{ number }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-xs-10 col-xs-offset-2">
+              <button type="submit" class="btn btn-primary" type="submit" class="btn btn-primary pull-right" [disabled]="!plusSouventForm.valid">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col" style="margin-left: 4%">
+          <table *ngIf="show" class="table  table-hover shadow-lg active">
+            <thead class="bg-primary ">
+            <tr>
+              <th scope="col">Numero</th>
+              <th scope="col">Nombre de sortie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of map | keyvalue">
+              <th scope="row">{{item.key}}</th>
+              <td>{{item.value}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-04">
-      <div class="form-group">
-        <label for="dateD">Au :</label> <input type="date" class="form-control" id="dateD">
-      </div>
-    </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
 
-  </form>
-    -->
-  <table class="table ">
-    <thead class="bg-primary ">
-    <tr>
-      <th scope="col">Numero</th>
-      <th scope="col">Nombre de sortie</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of map | keyvalue">
-      <th scope="row">{{item.key}}</th>
-      <td>{{item.value}}</td>
-    </tr>
-    </tbody>
-  </table>
+  </div>
 
 </div>

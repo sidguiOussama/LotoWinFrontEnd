@@ -9,6 +9,7 @@ import {Tirage} from '../Models/Tirage.module';
 })
 export class StatistiqueService{
 
+ // url = 'http://localhost:8080/Statistique';
   url = 'https://loto-win-api.herokuapp.com/Statistique';
   constructor(private  http: HttpClient) { }
 
@@ -20,7 +21,7 @@ export class StatistiqueService{
   }
 
   getSortieAnnee(numero: number): Observable<Tirage[]>{
-    return this.http.get<Tirage[]>(this.url + '/SortieAnnee/' + numero );
+    return this.http.get<Tirage[]>(this.url + '/SortieAnnee/' + numero + '/' + 2020);
   }
 }
 

@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'plus', component: PlusSouventComponent },
   {path: 'moins', component: MoinsSouventComponent },
   {path: 'sortie', component: SortieAnneeComponent },
+  { path: '**', redirectTo: 'upload' }
 ];
 
 @NgModule({
