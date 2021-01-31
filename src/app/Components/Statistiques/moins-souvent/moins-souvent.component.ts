@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StatistiqueService} from '../../../Services/statistique.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {TirageDto} from '../../../Models/TirageDto';
 
 @Component({
   selector: 'app-moins-souvent',
@@ -15,7 +16,7 @@ export class MoinsSouventComponent implements OnInit {
   numbers: number[] = [];
   show = false;
   moinsSouventForm: FormGroup;
-
+  tirageDto: TirageDto;
   ngOnInit(): void {
     for (let i = 1; i <= 49; i++) {
       this.numbers[i] = i;
@@ -41,8 +42,13 @@ export class MoinsSouventComponent implements OnInit {
   }
 
   OnSubmit() {
-    const numero = this.moinsSouventForm.get('number').value;
-    this.statistiqueService.getNumeroMoinsSouvent(numero).subscribe(
+    this.tirageDto = new TirageDto();
+    this.tirageDto.nombre = this.moinsSouventForm.get('number').value;
+    this.tirageDto.datedebut = this.moinsSouventForm.get('dateDebut').value;
+    this.tirageDto.dateFin = this.moinsSouventForm.get('dateFin').value;
+
+    this.map.clear();
+    this.statistiqueService.getNumeroMoinsSouvent(this.tirageDto).subscribe(
       (data) => {
         for (const [key, value] of Object.entries(data)) {
           this.map.set(Number(key), value);

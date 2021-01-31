@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StatistiqueService} from '../../../Services/statistique.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {TirageDto} from '../../../Models/TirageDto';
 
 @Component({
   selector: 'app-plus-souvent',
@@ -14,6 +15,7 @@ export class PlusSouventComponent implements OnInit {
   show = false;
   map: Map<number, number> = new Map<number, number>();
   numbers: number[] = [];
+  tirageDto: TirageDto;
   constructor(private statistiqueService: StatistiqueService, private router: Router) { }
 
   ngOnInit(): void {
@@ -39,8 +41,14 @@ export class PlusSouventComponent implements OnInit {
     this.router.navigate(['/sortie']);
   }
   OnSubmit() {
-      const number = this.plusSouventForm.get('number').value;
-      this.statistiqueService.getNumeroSouvent(number).subscribe(
+      //const number = this.plusSouventForm.get('number').value;
+      //alert(this.plusSouventForm.get('dateDebut').value);
+      this.tirageDto = new TirageDto();
+      this.tirageDto.nombre = this.plusSouventForm.get('number').value;
+      this.tirageDto.datedebut = this.plusSouventForm.get('dateDebut').value;
+      this.tirageDto.dateFin = this.plusSouventForm.get('dateFin').value;
+      this.map.clear();
+      this.statistiqueService.getNumeroSouvent(this.tirageDto).subscribe(
         (data) => {
           for (const [key, value] of Object.entries(data)) {
             this.map.set(Number(key), value);
