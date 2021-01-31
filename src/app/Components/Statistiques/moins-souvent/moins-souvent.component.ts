@@ -22,7 +22,7 @@ export class MoinsSouventComponent implements OnInit {
     }
 
     this.moinsSouventForm = new FormGroup({
-      dateDebut: new FormControl('', Validators.required),
+      dateDebut: new FormControl(''),
       dateFin: new FormControl(''),
       number: new FormControl(''),
     });
@@ -41,8 +41,8 @@ export class MoinsSouventComponent implements OnInit {
   }
 
   OnSubmit() {
-    const dateD = this.moinsSouventForm.get('number').value;
-    this.statistiqueService.getNumeroMoinsSouvent(5).subscribe(
+    const numero = this.moinsSouventForm.get('number').value;
+    this.statistiqueService.getNumeroMoinsSouvent(numero).subscribe(
       (data) => {
         for (const [key, value] of Object.entries(data)) {
           this.map.set(Number(key), value);

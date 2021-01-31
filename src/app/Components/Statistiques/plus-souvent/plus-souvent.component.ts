@@ -22,7 +22,7 @@ export class PlusSouventComponent implements OnInit {
     }
 
     this.plusSouventForm = new FormGroup({
-      dateDebut: new FormControl('', Validators.required),
+     dateDebut: new FormControl(''),
       dateFin: new FormControl(''),
       number: new FormControl(''),
     });
@@ -39,14 +39,14 @@ export class PlusSouventComponent implements OnInit {
     this.router.navigate(['/sortie']);
   }
   OnSubmit() {
-      const dateD = this.plusSouventForm.get('number').value;
-      this.statistiqueService.getNumeroSouvent(5).subscribe(
+      const number = this.plusSouventForm.get('number').value;
+      this.statistiqueService.getNumeroSouvent(number).subscribe(
         (data) => {
           for (const [key, value] of Object.entries(data)) {
             this.map.set(Number(key), value);
           }
           console.log(this.map);
-          this.show= true;
+          this.show = true;
         }
       );
 
