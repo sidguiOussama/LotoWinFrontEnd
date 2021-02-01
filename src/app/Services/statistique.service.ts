@@ -11,8 +11,8 @@ import {EcartDTO} from '../Models/EcartDTO';
 })
 export class StatistiqueService{
 
-  url = 'http://localhost:8080/Statistique';
-  //url = 'https://loto-win-api.herokuapp.com/Statistique';
+  //url = 'http://localhost:8080/Statistique';
+  url = 'https://loto-win-api.herokuapp.com/Statistique';
   constructor(private  http: HttpClient) { }
 
   /* getNumeroSouvent(numero: number): Observable< Map< number, number> >{
