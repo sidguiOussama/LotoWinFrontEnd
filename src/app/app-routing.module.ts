@@ -4,12 +4,14 @@ import {UploadFichierComponent} from './Components/Fichier/upload-fichier/upload
 import {PlusSouventComponent} from './Components/Statistiques/plus-souvent/plus-souvent.component';
 import {MoinsSouventComponent} from './Components/Statistiques/moins-souvent/moins-souvent.component';
 import {SortieAnneeComponent} from './Components/Statistiques/sortie-annee/sortie-annee.component';
+import {EcartMaxMinComponent} from './Components/Statistiques/ecart-max-min/ecart-max-min.component';
 
 const routes: Routes = [
   {path: 'upload', component: UploadFichierComponent },
   {path: 'plus', component: PlusSouventComponent },
   {path: 'moins', component: MoinsSouventComponent },
   {path: 'sortie', component: SortieAnneeComponent },
+  {path: 'ecart', component: EcartMaxMinComponent },
   { path: '**', redirectTo: 'upload' }
 ];
 

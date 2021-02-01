@@ -9,6 +9,10 @@
   <li class="nav-item">
     <a class="nav-link text-danger" style="cursor: pointer;" (click)="sortie()"><h4>Sortie sur une année</h4></a>
   </li>
+
+  <li class="nav-item">
+    <a class="nav-link " style="cursor: pointer;" (click)="ecart()"><h4>Ecart min & max</h4></a>
+  </li>
 </ul>
 <br>
 <br>
@@ -24,6 +28,9 @@
       <div class="row">
         <div class="col-xs-2">
           <div>
+            <div *ngIf="spinner" style="text-align: center">
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
             <form class="form-horizontal form-group form-control-range " [formGroup]="sortieForm" (ngSubmit)="OnSubmit()">
               <div class="form-group">
                 <label  class="pull-left">Année :</label>

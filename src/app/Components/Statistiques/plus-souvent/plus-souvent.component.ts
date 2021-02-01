@@ -16,6 +16,7 @@ export class PlusSouventComponent implements OnInit {
   map: Map<number, number> = new Map<number, number>();
   numbers: number[] = [];
   tirageDto: TirageDto;
+  spinner = false;
   constructor(private statistiqueService: StatistiqueService, private router: Router) { }
 
   ngOnInit(): void {
@@ -40,9 +41,13 @@ export class PlusSouventComponent implements OnInit {
   sortie() {
     this.router.navigate(['/sortie']);
   }
+  ecart() {
+    this.router.navigate(['/ecart']);
+  }
   OnSubmit() {
       //const number = this.plusSouventForm.get('number').value;
       //alert(this.plusSouventForm.get('dateDebut').value);
+    this.spinner = true;
       this.tirageDto = new TirageDto();
       this.tirageDto.nombre = this.plusSouventForm.get('number').value;
       this.tirageDto.datedebut = this.plusSouventForm.get('dateDebut').value;
@@ -55,6 +60,7 @@ export class PlusSouventComponent implements OnInit {
           }
           console.log(this.map);
           this.show = true;
+          this.spinner = false;
         }
       );
 

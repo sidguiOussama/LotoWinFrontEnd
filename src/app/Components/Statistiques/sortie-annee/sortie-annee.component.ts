@@ -14,6 +14,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class SortieAnneeComponent implements OnInit {
 
   sortieForm: FormGroup;
+  spinner = false;
   constructor(private statistiqueService: StatistiqueService, private router: Router) { }
   boulArray = [1, 8, 15, 22 , 29 , 36 , 43 ];
   years = [2008, 2009, 2010, 2011 , 2012 , 2013 , 2014 , 2016 , 2017, 2018, 2019, 2020, 2021 ];
@@ -54,11 +55,15 @@ export class SortieAnneeComponent implements OnInit {
     this.router.navigate(['/sortie']);
   }
 
+  ecart() {
+    this.router.navigate(['/ecart']);
+  }
   checked(value: number){
     this.value = value;
   }
   OnSubmit(){
 
+    this.spinner = true;
     let value = [0,0,0,0,0,0,0,0,0,0,0,0];
     let date;
     let m = 0;
@@ -71,6 +76,7 @@ export class SortieAnneeComponent implements OnInit {
           value[m - 1] = value[m - 1] + 1;
         }
         this.barChartData = [{data: value , label: 'Nombre de sortie '}];
+        this.spinner = false;
       }
     );
   }

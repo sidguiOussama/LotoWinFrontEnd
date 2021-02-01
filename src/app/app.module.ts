@@ -12,6 +12,7 @@ import { MoinsSouventComponent } from './Components/Statistiques/moins-souvent/m
 import { SortieAnneeComponent } from './Components/Statistiques/sortie-annee/sortie-annee.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
+import { EcartMaxMinComponent } from './Components/Statistiques/ecart-max-min/ecart-max-min.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {ChartsModule} from 'ng2-charts';
     PlusSouventComponent,
     MoinsSouventComponent,
     SortieAnneeComponent,
+    EcartMaxMinComponent,
   ],
   imports: [
     BrowserModule,

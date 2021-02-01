@@ -15,6 +15,7 @@ export class MoinsSouventComponent implements OnInit {
   constructor(private statistiqueService: StatistiqueService, private router: Router) { }
   numbers: number[] = [];
   show = false;
+  spinner = false;
   moinsSouventForm: FormGroup;
   tirageDto: TirageDto;
   ngOnInit(): void {
@@ -40,8 +41,12 @@ export class MoinsSouventComponent implements OnInit {
   sortie() {
     this.router.navigate(['/sortie']);
   }
+  ecart() {
+    this.router.navigate(['/ecart']);
+  }
 
   OnSubmit() {
+    this.spinner = true;
     this.tirageDto = new TirageDto();
     this.tirageDto.nombre = this.moinsSouventForm.get('number').value;
     this.tirageDto.datedebut = this.moinsSouventForm.get('dateDebut').value;
@@ -55,6 +60,7 @@ export class MoinsSouventComponent implements OnInit {
         }
         console.log(this.map);
         this.show = true;
+        this.spinner = false;
       }
     );
 

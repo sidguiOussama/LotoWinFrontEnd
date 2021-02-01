@@ -9,6 +9,9 @@
   <li class="nav-item">
     <a class="nav-link " style="cursor: pointer;" (click)="sortie()"><h4>Sortie sur une année</h4></a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link " style="cursor: pointer;" (click)="ecart()"><h4>Ecart min & max</h4></a>
+  </li>
 </ul>
 
 <br>
@@ -20,8 +23,12 @@
 
     <div class="container">
       <!-- Horizonatal Form -->
+
       <div class="row">
         <div class="col-xs-6">
+          <div *ngIf="spinner" style="text-align: center">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          </div>
           <form class="form-horizontal form-group form-control-range " [formGroup]="moinsSouventForm" (ngSubmit)="OnSubmit()">
 
             <div class="form-group">
