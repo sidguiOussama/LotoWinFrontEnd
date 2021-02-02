@@ -13,6 +13,7 @@ import { SortieAnneeComponent } from './Components/Statistiques/sortie-annee/sor
 import {ReactiveFormsModule} from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
 import { EcartMaxMinComponent } from './Components/Statistiques/ecart-max-min/ecart-max-min.component';
+import { SysReducteurComponent } from './Components/Statistiques/sys-reducteur/sys-reducteur.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { EcartMaxMinComponent } from './Components/Statistiques/ecart-max-min/ec
     MoinsSouventComponent,
     SortieAnneeComponent,
     EcartMaxMinComponent,
+    SysReducteurComponent,
   ],
   imports: [
     BrowserModule,

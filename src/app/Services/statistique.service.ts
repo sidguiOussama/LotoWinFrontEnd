@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {Tirage} from '../Models/Tirage.module';
 import {TirageDto} from '../Models/TirageDto';
 import {EcartDTO} from '../Models/EcartDTO';
+import {CombinDTO} from '../Models/CombinDTO';
+import {Combinaison} from '../Models/Combinaison.module';
 
 
 @Injectable({
@@ -33,6 +35,10 @@ export class StatistiqueService{
   }
   getEcart(): Observable<EcartDTO[]>{
     return this.http.get<EcartDTO[]>(this.url + '/EcartMinMax');
+  }
+
+  getSystemReducteur(combinDto: CombinDTO): Observable<Combinaison[] >{
+    return this.http.post<Combinaison[]>(this.url + '/AllCombin' , combinDto );
   }
 }
 
