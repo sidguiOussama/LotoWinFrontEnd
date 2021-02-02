@@ -10,6 +10,7 @@ import {CombinDTO} from '../../../Models/CombinDTO';
 })
 export class SysReducteurComponent implements OnInit {
 
+  boulArray = [1, 8, 15, 22 , 29 , 36 , 43 ];
   combinDto: CombinDTO;
   constructor(private statistiqueService: StatistiqueService, private router: Router) { }
   ngOnInit(): void {

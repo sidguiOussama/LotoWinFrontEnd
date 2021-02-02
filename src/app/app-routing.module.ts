@@ -6,6 +6,7 @@ import {MoinsSouventComponent} from './Components/Statistiques/moins-souvent/moi
 import {SortieAnneeComponent} from './Components/Statistiques/sortie-annee/sortie-annee.component';
 import {EcartMaxMinComponent} from './Components/Statistiques/ecart-max-min/ecart-max-min.component';
 import {SysReducteurComponent} from './Components/Statistiques/sys-reducteur/sys-reducteur.component';
+import {PronosticsComponent} from './Components/pronostics/pronostics/pronostics.component';
 
 const routes: Routes = [
   {path: 'upload', component: UploadFichierComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'sortie', component: SortieAnneeComponent },
   {path: 'ecart', component: EcartMaxMinComponent },
   {path: 'sys', component: SysReducteurComponent },
+  {path: 'pronostics', component: PronosticsComponent },
   { path: '**', redirectTo: 'upload' }
 ];
 
