@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FichierService} from '../../../Services/fichier.service';
 import {Fichier} from '../../../Models/Fichier.module';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-upload-fichier',
@@ -9,7 +10,7 @@ import {Fichier} from '../../../Models/Fichier.module';
 })
 export class UploadFichierComponent implements OnInit {
 
-  constructor(private fichierSevice: FichierService) { }
+  constructor(private fichierSevice: FichierService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,8 @@ export class UploadFichierComponent implements OnInit {
       this.fichierSevice.createNewFile(fichier).subscribe(
         (data) => {
           alert(JSON.stringify(data));
+          console.log('UPLOAD OK');
+          this.router.navigate(['/plus']);
         }, (error) => {
           console.log('Erreur : ' + error);
         }
